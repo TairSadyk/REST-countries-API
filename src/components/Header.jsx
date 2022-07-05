@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-function Header() {
-  const [isDark, setIsDark] = useState(false);
-  const switchMode = () => setIsDark(!isDark);
+
+function Header(props) {
+  // const [isDark, setIsDark] = useState(false);
+  // const switchMode = () => setIsDark(!isDark);
   return (
-    <header className={isDark ? "header header--dark" : "header header--light"}>
+    <header className="header">
       <p className="header__title">Where in the world?</p>
-      <div onClick={switchMode} className="header__btn">
-        {isDark ? (
+      <div onClick={props.toggleTheme} className="header__btn">
+        {props.theme ? (
           <DarkModeIcon className="header__icon header__icon--dark" />
         ) : (
           <DarkModeOutlinedIcon className="header__icon header__icon--light" />

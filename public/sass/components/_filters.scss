@@ -1,0 +1,29 @@
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  &__cont {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: $color-white;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    box-shadow: 0 4px 10px rgba(black, 0.15);
+    // overflow: hidden;
+  }
+  &__icon {
+    font-size: 2rem;
+    color: $color-grey-dark;
+  }
+  &__input {
+    border: none;
+    height: 100%;
+    border-radius: 0 0.5rem 0.5rem 0;
+    // outline: none;
+  }
+  &__select.MuiFormControl-root {
+    margin: 0;
+    border: none;
+  }
+}

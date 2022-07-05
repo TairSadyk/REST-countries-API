@@ -5,14 +5,6 @@
   font-size: $font-size-home;
   display: flex;
   justify-content: space-between;
-  &--light {
-    background-color: $color-white;
-    color: $color-blue-dark-2;
-  }
-  &--dark {
-    background-color: $color-blue;
-    color: $color-white;
-  }
   &__title {
     font-size: 2.2rem;
     font-weight: $font-weight-bold;
@@ -29,4 +21,12 @@
   &__text {
     font-weight: $font-weight-medium;
   }
+}
+#light .header {
+  background-color: $color-white;
+  color: $color-blue-dark-2;
+}
+#dark .header {
+  background-color: $color-blue;
+  color: $color-white;
 }
