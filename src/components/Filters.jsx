@@ -6,7 +6,11 @@ export default function Filters() {
     <div className="filters">
       <div className="filters__cont">
         <SearchIcon className="filters__icon" />
-        <input className="filters__input" type="text" />
+        <input
+          className="filters__input"
+          type="text"
+          placeholder="Search for a country..."
+        />
       </div>
       <SelectRegion />
     </div>

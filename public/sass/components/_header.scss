@@ -15,8 +15,8 @@
     align-items: center;
     cursor: pointer;
   }
-  &__icon {
-    font-size: 2rem !important;
+  &__icon.MuiSvgIcon-root {
+    font-size: 2rem;
   }
   &__text {
     font-weight: $font-weight-medium;

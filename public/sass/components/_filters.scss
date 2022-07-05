@@ -1,29 +1,109 @@
 .filters {
+  padding: 2rem 10rem;
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   margin-top: 3rem;
   &__cont {
     display: flex;
-    gap: 1rem;
     align-items: center;
-    background-color: $color-white;
+    gap: 1rem;
     border-radius: 0.5rem;
     padding-left: 1rem;
     box-shadow: 0 4px 10px rgba(black, 0.15);
-    // overflow: hidden;
+    width: 30%;
   }
-  &__icon {
+  &__icon.MuiSvgIcon-root {
     font-size: 2rem;
-    color: $color-grey-dark;
   }
   &__input {
     border: none;
     height: 100%;
+    width: 100%;
     border-radius: 0 0.5rem 0.5rem 0;
-    // outline: none;
+    padding: 2rem 1rem;
   }
   &__select.MuiFormControl-root {
     margin: 0;
     border: none;
+  }
+  &__dropdown-menu {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+  }
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20rem;
+    padding: 1rem 2rem;
+    font-size: $font-size-home;
+    box-shadow: 0 4px 10px rgba(black, 0.15);
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .dropdown {
+    position: absolute;
+    top: 115%;
+    left: 0;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(black, 0.15);
+    border-radius: 0.5rem;
+    transition: all 0.4s;
+    &__label {
+      padding: 1rem 2rem;
+      font-size: $font-size-home;
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+    &__option {
+      display: none;
+    }
+  }
+}
+#light {
+  .filters {
+    &__cont,
+    &__btn,
+    .dropdown {
+      background-color: $color-white;
+    }
+    &__icon.MuiSvgIcon-root {
+      color: $color-grey-dark;
+    }
+    .dropdown {
+      &__label {
+        &:hover {
+          background-color: $color-grey-light;
+        }
+      }
+    }
+  }
+}
+#dark {
+  .filters {
+    &__cont,
+    &__input,
+    &__btn,
+    .dropdown {
+      background-color: $color-blue;
+      color: $color-white;
+    }
+    &__input::placeholder {
+      color: $color-white;
+    }
+    &__icon.MuiSvgIcon-root {
+      color: $color-white;
+    }
+    .dropdown {
+      &__label {
+        &:hover {
+          background-color: $color-blue-dark-1;
+        }
+      }
+    }
   }
 }

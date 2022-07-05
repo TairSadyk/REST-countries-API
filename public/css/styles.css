@@ -34,8 +34,8 @@ body {
   align-items: center;
   cursor: pointer;
 }
-.header__icon {
-  font-size: 2rem !important;
+.header__icon.MuiSvgIcon-root {
+  font-size: 2rem;
 }
 .header__text {
   font-weight: 600;
@@ -62,31 +62,96 @@ body {
 }
 
 .filters {
+  padding: 2rem 10rem;
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   margin-top: 3rem;
 }
 .filters__cont {
   display: flex;
-  gap: 1rem;
   align-items: center;
-  background-color: hsl(0deg, 0%, 100%);
+  gap: 1rem;
   border-radius: 0.5rem;
   padding-left: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 30%;
 }
-.filters__icon {
+.filters__icon.MuiSvgIcon-root {
   font-size: 2rem;
-  color: hsl(0deg, 0%, 52%);
 }
 .filters__input {
   border: none;
   height: 100%;
+  width: 100%;
   border-radius: 0 0.5rem 0.5rem 0;
+  padding: 2rem 1rem;
 }
 .filters__select.MuiFormControl-root {
   margin: 0;
   border: none;
+}
+.filters__dropdown-menu {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+.filters__btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20rem;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.filters .dropdown {
+  position: absolute;
+  top: 115%;
+  left: 0;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  transition: all 0.4s;
+}
+.filters .dropdown__label {
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.filters .dropdown__option {
+  display: none;
+}
+
+#light .filters__cont, #light .filters__btn,
+#light .filters .dropdown {
+  background-color: hsl(0deg, 0%, 100%);
+}
+#light .filters__icon.MuiSvgIcon-root {
+  color: hsl(0deg, 0%, 52%);
+}
+#light .filters .dropdown__label:hover {
+  background-color: hsl(0deg, 0%, 98%);
+}
+
+#dark .filters__cont, #dark .filters__input, #dark .filters__btn,
+#dark .filters .dropdown {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
+}
+#dark .filters__input::placeholder {
+  color: hsl(0deg, 0%, 100%);
+}
+#dark .filters__icon.MuiSvgIcon-root {
+  color: hsl(0deg, 0%, 100%);
+}
+#dark .filters .dropdown__label:hover {
+  background-color: hsl(207deg, 26%, 17%);
 }
 
 /*# sourceMappingURL=styles.css.map */

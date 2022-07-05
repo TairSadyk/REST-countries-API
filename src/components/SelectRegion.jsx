@@ -1,42 +1,109 @@
 import React from "react";
-// import InputLabel from "@mui/material/InputLabel";
-// import MenuItem from "@mui/material/MenuItem";
-// import FormControl from "@mui/material/FormControl";
-// import Select from "@mui/material/Select";
+import DropdownLabel from "./DropdownLabel";
+import DropdownInput from "./DropdownInput";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function SelectRegion() {
+  const hideStyle = { visibility: "none", opacity: "0", pointerEvents: "none" };
+  const showStyle = {
+    visibility: "visible",
+    opacity: "1",
+    pointerEvents: "visible",
+  };
+  const regions = ["africa", "america", "asia", "europe", "oceania"];
   const [region, setRegion] = React.useState("");
-
+  const [openMenu, setOpenMenu] = React.useState(false);
+  console.log(region);
+  const handleClick = () => setOpenMenu(!openMenu);
   const handleChange = (event) => {
     setRegion(event.target.value);
+    setOpenMenu(false);
   };
+  const capitalize = (input) => input[0].toUpperCase() + input.slice(1);
 
   return (
-    <div>
-      <label htmlFor="select-region">Filter By Region</label>
-      <select id="select-region" onChange={handleChange}>
-        <option value={"africe"}>Africa</option>
-        <option value={"america"}>America</option>
-        <option value={"asia"}>Asia</option>
-        <option value={"europe"}>Europe</option>
-        <option value={"oceania"}>Oceania</option>
-      </select>
+    <div className="filters__dropdown-menu">
+      <div className="filters__btn" onClick={handleClick}>
+        <p className="filters__btn-text">
+          {region ? capitalize(region) : "Filter by Region"}
+        </p>
+        <KeyboardArrowDownIcon className="filters__btn-icon" />
+      </div>
+      <div className="dropdown" style={openMenu ? showStyle : hideStyle}>
+        {regions.map((region, i) => {
+          return (
+            <DropdownLabel
+              key={"lab" + i}
+              id={region}
+              name={capitalize(region)}
+            />
+          );
+        })}
+        {regions.map((region, i) => (
+          <DropdownInput
+            key={"inp" + i}
+            id={region}
+            value={region}
+            onChange={handleChange}
+          />
+        ))}
+
+        {/* <label className="dropdown__label" htmlFor="africa">
+          Africa
+        </label>
+        <input
+          name="region"
+          className="dropdown__option"
+          type="radio"
+          id="africa"
+          value="africa"
+          onChange={handleChange}
+        />
+        <label className="dropdown__label" htmlFor="america">
+          America
+        </label>
+        <input
+          name="region"
+          className="dropdown__option"
+          type="radio"
+          id="america"
+          value="america"
+          onChange={handleChange}
+        />
+        <label className="dropdown__label" htmlFor="asia">
+          Asia
+        </label>
+        <input
+          name="region"
+          className="dropdown__option"
+          type="radio"
+          id="asia"
+          value="asia"
+          onChange={handleChange}
+        />
+        <label className="dropdown__label" htmlFor="europe">
+          Europe
+        </label>
+        <input
+          name="region"
+          className="dropdown__option"
+          type="radio"
+          id="europe"
+          value="europe"
+          onChange={handleChange}
+        />
+        <label className="dropdown__label" htmlFor="oceania">
+          Oceania
+        </label>
+        <input
+          name="region"
+          className="dropdown__option"
+          type="radio"
+          id="oceania"
+          value="oceania"
+          onChange={handleChange}
+        /> */}
+      </div>
     </div>
-    // <FormControl className="filters__select" sx={{ m: 1, minWidth: 120 }}>
-    //   <InputLabel id="select-region">Filter by Region:</InputLabel>
-    //   <Select
-    //     labelId="select-region"
-    //     id="select-region"
-    //     value={region}
-    //     label="Region"
-    //     onChange={handleChange}
-    //   >
-    //     <MenuItem value={"africe"}>Africa</MenuItem>
-    //     <MenuItem value={"america"}>America</MenuItem>
-    //     <MenuItem value={"asia"}>Asia</MenuItem>
-    //     <MenuItem value={"europe"}>Europe</MenuItem>
-    //     <MenuItem value={"oceania"}>Oceania</MenuItem>
-    //   </Select>
-    // </FormControl>
   );
 }
