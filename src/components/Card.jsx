@@ -4,7 +4,7 @@ export default function Card(props) {
   return (
     <article className="card">
       <img className="card__img" src={props.img} alt="Flag" />
-      <h3 className="card__title">{props.country}</h3>
+      <h3 className="card__title">{props.name}</h3>
       <ul className="card__list">
         <li className="card__item">
           <span>Population:</span>&nbsp;
