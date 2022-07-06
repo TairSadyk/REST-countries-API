@@ -13,7 +13,6 @@ export default function SelectRegion() {
   const regions = ["africa", "america", "asia", "europe", "oceania"];
   const [region, setRegion] = React.useState("");
   const [openMenu, setOpenMenu] = React.useState(false);
-  console.log(region);
   const handleClick = () => setOpenMenu(!openMenu);
   const handleChange = (event) => {
     setRegion(event.target.value);

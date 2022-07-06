@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+.grid {
+  display: grid;
+  max-width: 1440px;
+  margin: 5rem auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8rem;
+}
+
 *,
 *::before,
 *::after {
@@ -15,6 +23,44 @@ body {
   font-size: 400;
   font-family: "Nunito Sans", sans-serif;
   box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  gap: 2rem;
+}
+.card__img {
+  width: 100%;
+}
+.card__title {
+  margin-left: 3rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.card__list {
+  list-style: none;
+  margin-left: 3rem;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.card__item span {
+  font-weight: 600;
+}
+
+#light .card {
+  background-color: hsl(0deg, 0%, 100%);
+}
+
+#dark .card {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
 }
 
 .header {
