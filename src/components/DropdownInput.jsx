@@ -8,6 +8,7 @@ export default function DropdownInput(props) {
       id={props.id}
       value={props.value}
       onChange={props.onChange}
+      onClick={() => props.sort(props.value)}
     />
   );
 }

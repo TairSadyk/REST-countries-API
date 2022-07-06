@@ -1,5 +1,6 @@
 import React from "react";
 export default function Card(props) {
+  // Intl API to format numbers based on the user location
   const fm = new Intl.NumberFormat({ style: "decimal" });
   return (
     <article className="card">
