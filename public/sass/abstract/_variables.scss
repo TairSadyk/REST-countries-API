@@ -8,9 +8,23 @@ $color-grey-light: hsl(0, 0%, 98%);
 $color-white: hsl(0, 0%, 100%);
 
 ////////////////////////////////////////
-/// ///////////FONT/////////////////////
+//////////////FONT/////////////////////
 $font-size-home: 1.4rem;
 $font-size-details: 1.6rem;
+$font-size-sm: 1.8rem;
+$font-size-md: 2.2rem;
+$size-1rem: 1rem;
 $font-weight-normal: 300;
 $font-weight-medium: 600;
 $font-weight-bold: 800;
+
+////////////////////////////////////////
+//////////////SHADOW/////////////////////
+$box-shadow-md: 0 4px 10px rgba(black, 0.1);
+
+$padding-base: 2rem 10rem;
+$padding-sm: 1rem 2rem;
+$max-width-desktop: 1440px;
+
+$margin-center: 0 auto;
+$border-radius-base: 0.6rem;

@@ -1,7 +1,7 @@
 .filters {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 2rem 10rem;
+  max-width: $max-width-desktop;
+  margin: $margin-center;
+  padding: $padding-base;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -9,20 +9,20 @@
   &__cont {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    border-radius: 0.5rem;
-    padding-left: 1rem;
-    box-shadow: 0 4px 10px rgba(black, 0.15);
+    gap: $size-1rem;
+    border-radius: $border-radius-base;
+    padding-left: $size-1rem;
+    box-shadow: $box-shadow-md;
     width: 30%;
   }
   &__icon.MuiSvgIcon-root {
-    font-size: 2rem;
+    font-size: $font-size-sm;
   }
   &__input {
     border: none;
     height: 100%;
     width: 100%;
-    border-radius: 0 0.5rem 0.5rem 0;
+    border-radius: 0 $border-radius-base $border-radius-base 0;
     padding: 2rem 1rem;
   }
   &__select.MuiFormControl-root {
@@ -39,10 +39,10 @@
     justify-content: space-between;
     align-items: center;
     width: 20rem;
-    padding: 1rem 2rem;
+    padding: $padding-sm;
     font-size: $font-size-home;
-    box-shadow: 0 4px 10px rgba(black, 0.15);
-    border-radius: 0.5rem;
+    box-shadow: $box-shadow-md;
+    border-radius: $border-radius-base;
     cursor: pointer;
   }
   .dropdown {
@@ -52,11 +52,11 @@
     width: 20rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 10px rgba(black, 0.15);
-    border-radius: 0.5rem;
+    box-shadow: $box-shadow-md;
+    border-radius: $border-radius-base;
     transition: all 0.4s;
     &__label {
-      padding: 1rem 2rem;
+      padding: $padding-sm;
       font-size: $font-size-home;
       transition: all 0.4s;
       cursor: pointer;

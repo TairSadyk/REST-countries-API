@@ -3,7 +3,7 @@ export default function Card(props) {
   // Intl API to format numbers based on the user location
   const fm = new Intl.NumberFormat({ style: "decimal" });
   return (
-    <article className="card">
+    <article className="card" onClick={() => props.showDetails(props.name)}>
       <img className="card__img" src={props.img} alt="Flag" />
       <h3 className="card__title">{props.name}</h3>
       <ul className="card__list">

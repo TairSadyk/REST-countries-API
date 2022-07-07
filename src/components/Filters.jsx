@@ -19,6 +19,9 @@ export default function Filters(props) {
           className="filters__input"
           type="text"
           placeholder="Search for a country..."
+          onChange={(e) => {
+            props.search(e.target.value);
+          }}
         />
       </div>
       <SelectRegion
