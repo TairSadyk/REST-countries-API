@@ -9,7 +9,7 @@ export default function App() {
   const [darkTheme, setDarkTheme] = useState(false);
   // initilize countries state to fetch API data
   const [countries, setCountries] = useState([]);
-  const [country, setCountry] = useState({});
+  // const [country, setCountry] = useState({});
 
   const [showDetails, setShowDetails] = useState(false);
   // dark&light theme functionality
@@ -37,7 +37,11 @@ export default function App() {
   };
   const handleDetailsShow = (name) => {
     setShowDetails(true);
-    setCountry(getCountriesInfo(`name/${name}`));
+    getCountriesInfo(`name/${name}`);
+  };
+  const returnHome = () => {
+    setShowDetails(false);
+    getCountriesInfo();
   };
   return (
     //set an ID for the parent element for elements that are affected by the theme switching
@@ -46,16 +50,20 @@ export default function App() {
       <Header theme={darkTheme} toggleTheme={toggleTheme} />
       {showDetails ? (
         <Details
-          img="https://flagcdn.com/w320/mt.png"
-          country="SOmething"
-          natName="Belgie"
-          reg={country.region}
-          subReg="Western Europe"
-          cap="Brussels"
-          tld=".be"
-          curr="Europe"
-          lang="Dutch,French"
-          borders={["Germany", "France", "Netherland"]}
+          img={countries[0].flags.png}
+          country={countries[0].name.common}
+          natName={countries[0].name.nativeName.common}
+          pop={countries[0].population}
+          reg={countries[0].region}
+          subReg={countries[0].subregion}
+          cap={countries[0].capital}
+          tld={countries[0].tld.reduce((prev, curr) => `${prev} | ${curr}`)}
+          curr={Object.values(countries[0].currencies)[0].name}
+          lang={Object.values(countries[0].languages).reduce(
+            (prev, curr) => `${prev}, ${curr}`
+          )}
+          borders={countries[0].borders}
+          return={returnHome}
         />
       ) : (
         <>

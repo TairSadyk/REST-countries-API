@@ -2,7 +2,9 @@ import React from "react";
 export default function Details(props) {
   return (
     <aside className="details">
-      <button className="details__btn-back">Back</button>
+      <button className="details__btn-back" onClick={props.return}>
+        Back
+      </button>
       <img src={props.img} alt="flag" className="details__img" />
       <div className="details__text">
         <h2 className="details__heading">{props.country}</h2>
@@ -13,7 +15,7 @@ export default function Details(props) {
           </li>
           <li className="details__item">
             <span>Population:</span>&nbsp;
-            {props.pop}
+            {new Intl.NumberFormat({ style: "decimal" }).format(props.pop)}
           </li>
           <li className="details__item">
             <span>Region:</span>&nbsp;
@@ -44,11 +46,15 @@ export default function Details(props) {
           <p className="details__paragraph">Border Countries</p>
           <div className="details__btns">
             {/* <button className="details__btn-country">{props.border}</button> */}
-            {props.borders.map((border, i) => (
-              <button key={"countryBtn" + i} className="details__btn-country">
-                {border}
-              </button>
-            ))}
+            {props.borders ? (
+              props.borders.map((border, i) => (
+                <button key={"countryBtn" + i} className="details__btn-country">
+                  {border}
+                </button>
+              ))
+            ) : (
+              <p>No neigbors</p>
+            )}
           </div>
         </div>
       </div>

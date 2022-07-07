@@ -113,7 +113,6 @@ body {
   padding: 2rem 10rem;
   max-width: 1440px;
   margin: 0 auto;
-  background-color: hsl(0deg, 0%, 98%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -127,6 +126,8 @@ body {
 }
 .details__img {
   width: 50%;
+  height: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .details__text {
   font-size: 1.6rem;
@@ -161,8 +162,24 @@ body {
 .details__btn-country {
   background-color: transparent;
   padding: 0.6rem 1.2rem;
-  border: 1px solid hsl(0deg, 0%, 52%);
   cursor: pointer;
+  border-radius: 0.6rem;
+}
+
+#light .details {
+  background-color: hsl(0deg, 0%, 98%);
+}
+#light .details__btn-country {
+  border: 1px solid hsl(0deg, 0%, 52%);
+}
+
+#dark .details {
+  background-color: hsl(207deg, 26%, 17%);
+  color: hsl(0deg, 0%, 98%);
+}
+#dark .details__btn-country {
+  color: color-grey-light;
+  border: 1px solid hsl(0deg, 0%, 98%);
 }
 
 .filters {

@@ -2,7 +2,7 @@
   padding: $padding-base;
   max-width: $max-width-desktop;
   margin: $margin-center;
-  background-color: $color-grey-light;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,6 +16,8 @@
 
   &__img {
     width: 50%;
+    height: 50%;
+    box-shadow: $box-shadow-md;
   }
   &__text {
     font-size: $font-size-details;
@@ -52,7 +54,25 @@
   &__btn-country {
     background-color: transparent;
     padding: 0.6rem 1.2rem;
-    border: 1px solid $color-grey-dark;
     cursor: pointer;
+    border-radius: $border-radius-base;
+  }
+}
+#light {
+  .details {
+    background-color: $color-grey-light;
+    &__btn-country {
+      border: 1px solid $color-grey-dark;
+    }
+  }
+}
+#dark {
+  .details {
+    background-color: $color-blue-dark-1;
+    color: $color-grey-light;
+    &__btn-country {
+      color: color-grey-light;
+      border: 1px solid $color-grey-light;
+    }
   }
 }
