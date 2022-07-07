@@ -18,6 +18,7 @@
     width: 50%;
     height: 50%;
     box-shadow: $box-shadow-md;
+    border-radius: $border-radius-base;
   }
   &__text {
     font-size: $font-size-details;
@@ -71,7 +72,7 @@
     background-color: $color-blue-dark-1;
     color: $color-grey-light;
     &__btn-country {
-      color: color-grey-light;
+      color: $color-grey-light;
       border: 1px solid $color-grey-light;
     }
   }

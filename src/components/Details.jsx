@@ -1,5 +1,17 @@
 import React from "react";
+import DetailsItem from "./DetailsItem";
 export default function Details(props) {
+  const fm = new Intl.NumberFormat({ style: "decimal" });
+  const ItemsArr = [
+    ["Native Name:", props.natName],
+    ["Population:", fm.format(props.pop)],
+    ["Region:", props.reg],
+    ["Sub Region:", props.subreg],
+    ["Capital:", props.cap],
+    ["Top Level Domain:", props.tld],
+    ["Currencies:", props.curr],
+    ["Languages:", props.lang],
+  ];
   return (
     <aside className="details">
       <button className="details__btn-back" onClick={props.return}>
@@ -9,38 +21,15 @@ export default function Details(props) {
       <div className="details__text">
         <h2 className="details__heading">{props.country}</h2>
         <ul className="details__list">
-          <li className="details__item">
-            <span>Native Name</span>&nbsp;
-            {props.natName}
-          </li>
-          <li className="details__item">
-            <span>Population:</span>&nbsp;
-            {new Intl.NumberFormat({ style: "decimal" }).format(props.pop)}
-          </li>
-          <li className="details__item">
-            <span>Region:</span>&nbsp;
-            {props.reg}
-          </li>
-          <li className="details__item">
-            <span>Sub Region:</span>&nbsp;
-            {props.subReg}
-          </li>
-          <li className="details__item">
-            <span>Capital:</span>&nbsp;
-            {props.cap}
-          </li>
-          <li className="details__item">
-            <span>Top Level Domain:</span>&nbsp;
-            {props.tld}
-          </li>
-          <li className="details__item">
-            <span>Currencies:</span>&nbsp;
-            {props.curr}
-          </li>
-          <li className="details__item">
-            <span>Languages:</span>&nbsp;
-            {props.lang}
-          </li>
+          {ItemsArr.map((item, i) => {
+            return (
+              <DetailsItem
+                key={"DetailsListItem" + i}
+                itemName={item[0]}
+                itemValue={item[1]}
+              />
+            );
+          })}
         </ul>
         <div className="details__border-countries">
           <p className="details__paragraph">Border Countries</p>
