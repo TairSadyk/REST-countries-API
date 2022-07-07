@@ -1,5 +1,6 @@
 import React from "react";
 import DetailsItem from "./DetailsItem";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 export default function Details(props) {
   const fm = new Intl.NumberFormat({ style: "decimal" });
   const ItemsArr = [
@@ -15,7 +16,7 @@ export default function Details(props) {
   return (
     <aside className="details">
       <button className="details__btn-back" onClick={props.return}>
-        Back
+        &larr; Back
       </button>
       <img src={props.img} alt="flag" className="details__img" />
       <div className="details__text">
@@ -32,12 +33,16 @@ export default function Details(props) {
           })}
         </ul>
         <div className="details__border-countries">
-          <p className="details__paragraph">Border Countries</p>
+          <p className="details__paragraph">Border Countries:</p>
           <div className="details__btns">
             {/* <button className="details__btn-country">{props.border}</button> */}
             {props.borders ? (
               props.borders.map((border, i) => (
-                <button key={"countryBtn" + i} className="details__btn-country">
+                <button
+                  onClick={(e) => props.getNeighbour(e.target.innerText)}
+                  key={"countryBtn" + i}
+                  className="details__btn-country"
+                >
                   {border}
                 </button>
               ))

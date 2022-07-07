@@ -43,6 +43,10 @@ export default function App() {
     setShowDetails(false);
     getCountriesInfo();
   };
+  const getNeigbourPage = (code) => {
+    getCountriesInfo(`alpha/${code}`);
+  };
+
   return (
     //set an ID for the parent element for elements that are affected by the theme switching
     <div id={darkTheme ? "dark" : "light"}>
@@ -52,7 +56,7 @@ export default function App() {
         <Details
           img={countries[0].flags.png}
           country={countries[0].name.common}
-          natName={countries[0].name.nativeName.common}
+          natName={Object.values(countries[0].name.nativeName)[0].common}
           pop={countries[0].population}
           reg={countries[0].region}
           subReg={countries[0].subregion}
@@ -64,6 +68,7 @@ export default function App() {
           )}
           borders={countries[0].borders}
           return={returnHome}
+          getNeighbour={getNeigbourPage}
         />
       ) : (
         <>
